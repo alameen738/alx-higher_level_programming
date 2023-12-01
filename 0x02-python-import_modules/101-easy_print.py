@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import pythoniscool
+with open(__import__('os').devnull, 'w') as f: f.write('#pythoniscool\n')

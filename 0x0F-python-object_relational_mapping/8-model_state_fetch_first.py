@@ -18,6 +18,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
+    print("Connecting to the database...")
     # Creating connection to database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         username, password, database), pool_pre_ping=True)
@@ -26,6 +27,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    print("Querying the first State object...")
     # Querying the first State object
     first_state = session.query(State).order_by(State.id).first()
 
